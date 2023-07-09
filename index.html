@@ -1,12 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://unpkg.com/maplibre-gl@3.1.0/dist/maplibre-gl.css"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      #map {
+        width: 100vw;
+        height: 100vh;
+      }
+    </style>
     <title>Corona Map</title>
-</head>
-<body>
-    
-</body>
-<script src="index.js"></script>
+  </head>
+  <body>
+    <div id="map"></div>
+  </body>
+  <script src="https://unpkg.com/maplibre-gl@3.1.0/dist/maplibre-gl.js"></script>
+  <script>
+    // Display a satellite map 
+        var map = new maplibregl.Map({
+    container: 'map',
+    zoom: 1,
+    center: [137.9150899566626, 36.25956997955441],
+    style:
+    'https://api.maptiler.com/maps/hybrid/style.json?key=get_your_own_OpIi9ZULNHzrESv6T2vL'
+    });
+
+    //Display a simple map
+    // //var map = new maplibregl.Map({
+    //     container: 'map',
+    //     style: 'https://demotiles.maplibre.org/style.json', // stylesheet location
+    //     center: [0, 40], // starting position [lng, lat]
+    //     zoom: 1 // starting zoom
+    // });
+  </script>
+  <script src="index.js"></script>
 </html>
